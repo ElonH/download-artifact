@@ -74,7 +74,7 @@ jobs:
 
     - name: Verify successful download
       run: |
-        $file = "some/new/path/file-A.txt"
+        $file = "some/new/path/Artifact-A/file-A.txt"
         if(!(Test-Path -path $file))
         {
             Write-Error "Expected file does not exist"
