@@ -2,12 +2,12 @@ name: Test
 on:
   push:
     branches:
-      - v2-preview
+      - master
     paths-ignore:
       - '**.md'
   pull_request:
     branches:
-      - v2-preview
+      - master
     paths-ignore:
       - '**.md'
 
@@ -69,7 +69,7 @@ jobs:
     - name: Download artifact A
       uses: ./
       with:
-        name: 'Artifact-A'
+        pattern: '^.+-A$'
         path: some/new/path
 
     - name: Verify successful download
