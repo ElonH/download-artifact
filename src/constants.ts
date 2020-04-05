@@ -1,4 +1,4 @@
 export enum Inputs {
-  Name = 'name',
+  Pattern = 'pattern',
   Path = 'path'
 }
