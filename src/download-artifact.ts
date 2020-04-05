@@ -1,5 +1,4 @@
 import * as core from '@actions/core'
-import * as artifact from '@actions/artifact'
 import * as downloadHttpClient from '@actions/artifact/lib/internal-download-http-client'
 import {DownloadResponse} from '@actions/artifact/lib/internal-download-response'
 import {getWorkSpaceDirectory} from '@actions/artifact/lib/internal-config-variables'
@@ -13,7 +12,7 @@ async function downloadArtifactsWithRegExp(
   path?: string | undefined
 ): Promise<DownloadResponse[]> {
   const response: DownloadResponse[] = []
-  let artifacts = await downloadHttpClient.listArtifacts()
+  const artifacts = await downloadHttpClient.listArtifacts()
   if (artifacts.count === 0) {
     core.info('Unable to find any artifacts for the associated workflow')
     return response
@@ -74,7 +73,6 @@ async function run(): Promise<void> {
     let pattern = core.getInput(Inputs.Pattern, {required: false})
     const path = core.getInput(Inputs.Path, {required: false})
 
-    const artifactClient = artifact.create()
     if (!pattern) {
       // download all artifacts
       pattern = '^(.*?)$'
