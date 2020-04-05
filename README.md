@@ -20,7 +20,7 @@ steps:
     # my-artifact-a
     # my-artifact-ab
     # ...
-- run: cat my-artifact
+- run: ls
 ```
 [RegExp Visualize](https://jex.im/regulex/#!flags=&re=^my-artifact-.*%3F%24)
 
@@ -37,7 +37,7 @@ steps:
     pattern: ^my-artifact$
     path: path/to/artifact
     
-- run: cat path/to/artifact
+- run: ls path/to/artifact
 ```
 
 > Note: If the `pattern` input parameter is not provided, all artifacts will be downloaded.
@@ -62,7 +62,7 @@ steps:
   with:
     path: path/to/artifacts
     
-- run: cat path/to/artifacts
+- run: ls path/to/artifacts
 ```
 
 Download all artifacts to the current working directory
