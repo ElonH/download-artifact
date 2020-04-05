@@ -1,9 +1,9 @@
-name: 'Download a Build Artifact'
-description: 'Download a build artifact that was previously uploaded in the workflow by the upload-artifact action'
-author: 'GitHub'
+name: 'Download Build Artifacts using RegExp'
+description: 'Find via RegExp and Download build artifacts that was previously uploaded in the workflow by the upload-artifact action'
+author: 'GitHub && ElonH'
 inputs: 
-  name:
-    description: 'Artifact name'
+  pattern:
+    description: 'Artifact name pattern'
     required: false
   path:
     description: 'Destination path'
